@@ -4,7 +4,13 @@
  */
 
 
-
+/**
+ * 字符串驼峰化
+ * 
+ * @inner
+ * @param {string} source 源字符串
+ * @return {string} 
+ */
 function camelize( source ) {
     return source.replace( /-([a-z])/ig, function ( $0, alpha ) {
         return alpha.toUpperCase();

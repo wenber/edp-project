@@ -46,7 +46,7 @@ exports.getLocations = function () {
     ];
 };
 
-exports.injectRes = function ( res ) {
+exports.injectResource = function ( res ) {
     for ( var key in res ) {
         global[ key ] = res[ key ];
     }

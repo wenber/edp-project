@@ -1,7 +1,7 @@
 {
     "name": "edp-project",
     "description": "Package for edp project manage",
-    "version": "0.4.2",
+    "version": "0.4.4",
     "contributors": [
         { "name": "errorrik", "email": "errorrik@gmail.com" },
         { "name": "leeight", "email" : "leeight@gmail.com" },
@@ -14,7 +14,7 @@
         "esprima": "~1.0.2",
         "escodegen": "~0.0.22",
         "mkdirp": "~0.3.3",
-        "semver": "~2.0"
+        "semver": "~1.1"
     },
     "main": "index.js",
     "repository": "git://github.com/ecomfe/edp-project"

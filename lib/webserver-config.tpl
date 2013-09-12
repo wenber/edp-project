@@ -4,7 +4,7 @@ exports.documentRoot = __dirname;
 exports.getLocations = function () {
     return [
         { 
-            location: '/', 
+            location: /\/$/, 
             handler: home( 'index.html' )
         },
         { 
@@ -24,13 +24,13 @@ exports.getLocations = function () {
             handler: empty() 
         },
         { 
-            location: /\.css$/, 
+            location: /\.css($|\?)/, 
             handler: [
                 autoless()
             ]
         },
         { 
-            location: /\.less$/, 
+            location: /\.less($|\?)/, 
             handler: [
                 file(),
                 less()

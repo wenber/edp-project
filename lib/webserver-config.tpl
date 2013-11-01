@@ -26,7 +26,7 @@ exports.getLocations = function () {
         { 
             location: /\.css($|\?)/, 
             handler: [
-                autoless()
+                autocss()
             ]
         },
         { 
@@ -34,6 +34,13 @@ exports.getLocations = function () {
             handler: [
                 file(),
                 less()
+            ]
+        },
+        { 
+            location: /\.styl($|\?)/, 
+            handler: [
+                file(),
+                stylus()
             ]
         },
         { 

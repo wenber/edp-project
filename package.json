@@ -1,7 +1,7 @@
 {
     "name": "edp-project",
     "description": "Package for edp project manage",
-    "version": "0.4.25",
+    "version": "0.4.26",
     "contributors": [
         { "name": "errorrik", "email": "errorrik@gmail.com" },
         { "name": "leeight", "email" : "leeight@gmail.com" },
@@ -9,6 +9,7 @@
     ],
 
     "dependencies": {
+        "edp-core": "~0.0.1",
         "edp-config": "~0.4",
         "edp-package": "~0.4",
         "esprima": "~1.0.2",

@@ -9,10 +9,15 @@ var pageEntries = 'html,htm,phtml,tpl,vm';
 exports.getProcessors = function () {
     return [ 
         new LessCompiler( {
-            entryExtnames: pageEntries
+            exclude: [],
+            entryExtnames: pageEntries,
+            compileOptions: {
+                compress: false
+            }
         } ), 
         new CssCompressor(),
         new ModuleCompiler( {
+            exclude: [],
             configFile: 'module.conf',
             entryExtnames: moduleEntries
         } ), 
@@ -22,7 +27,8 @@ exports.getProcessors = function () {
                 { type: 'html', tag: 'link', attribute: 'href', extnames: pageEntries },
                 { type: 'html', tag: 'img', attribute: 'src', extnames: pageEntries },
                 { type: 'html', tag: 'script', attribute: 'src', extnames: pageEntries },
-                { extnames: moduleEntries, replacer: 'module-config' }
+                { extnames: moduleEntries, replacer: 'module-config' },
+                { extnames: 'css,less', replacer: 'css' }
             ],
             from: 'src',
             to: 'asset'

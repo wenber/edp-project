@@ -1,5 +1,7 @@
 # edp-package
 
+[![Build Status](https://travis-ci.org/ecomfe/edp-project.png?branch=master)](https://travis-ci.org/ecomfe/edp-project) [![Dependencies Status](https://david-dm.org/ecomfe/edp-project.png)](https://david-dm.org/ecomfe/edp-project)
+
 Package for edp project manage.
 
 ## Usage

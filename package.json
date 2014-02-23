@@ -13,10 +13,13 @@
         "edp-config": "~0.4",
         "edp-package": "~0.4",
         "esprima": "~1.0.2",
-        "escodegen": "~0.0.22",
+        "escodegen": "~1.2.0",
         "mkdirp": "~0.3.3",
-        "semver": "~1.1"
+        "semver": "~2.2.1"
     },
     "main": "index.js",
-    "repository": "git://github.com/ecomfe/edp-project"
+    "repository": "git://github.com/ecomfe/edp-project",
+    "scripts": {
+        "test": "make -C test"
+    }
 }

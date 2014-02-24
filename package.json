@@ -20,6 +20,7 @@
     "main": "index.js",
     "repository": "git://github.com/ecomfe/edp-project",
     "scripts": {
-        "test": "make -C test"
+        "test": "make -C test",
+        "prepare": "npm ln edp-core edp-config edp-package"
     }
 }

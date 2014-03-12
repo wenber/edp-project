@@ -36,6 +36,23 @@ describe("read-loader-config", function(){
         expect( config.data.paths.hello ).toBe( 'src/bar/hello' );
         expect( config.data.packages.length ).toBeGreaterThan( 0 );
     });
+
+    it("comment in html", function () {
+        var file = path.resolve( Project, 'read-config-loader/comment.html' );
+        var content = fs.readFileSync( file, 'UTF-8' );
+
+        var config = ReadLoaderConfig( content, file );
+        expect( config ).toBeUndefined();
+    });
+
+    it("comment in js", function () {
+        var file = path.resolve( Project, 'read-config-loader/comment.js' );        
+        var content = fs.readFileSync( file, 'UTF-8' );
+
+        var config = ReadLoaderConfig( content, file );
+        expect( config ).toBeUndefined();
+    });
+
 });
 
 

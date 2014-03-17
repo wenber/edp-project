@@ -36,7 +36,7 @@ describe( 'sytle', function () {
         var updatedHtmlContent = fs.readFileSync( htmlFile, 'UTF-8');
 
         expect( updatedHtmlContent.search( beforeVersion ) ).toBeLessThan( 0 );
-        expect( updatedHtmlContent.match( RegExp( updatedVersion, 'g' ) ).length ).toEqual( 3 );
+        expect( updatedHtmlContent.match( RegExp( updatedVersion, 'g' ) ).length ).toEqual( 4 );
     } );
 
     it( 'update less', function () {

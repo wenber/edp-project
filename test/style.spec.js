@@ -36,7 +36,7 @@ describe( 'sytle', function () {
         var updatedHtmlContent = fs.readFileSync( htmlFile, 'UTF-8');
 
         expect( updatedHtmlContent.search( beforeVersion ) ).toBeLessThan( 0 );
-        expect( updatedHtmlContent.search( updatedVersion ) ).toBeGreaterThan( 0 );
+        expect( updatedHtmlContent.match( RegExp( updatedVersion, 'g' ) ).length ).toEqual( 3 );
     } );
 
     it( 'update less', function () {
@@ -44,7 +44,7 @@ describe( 'sytle', function () {
         expect( beforeLessContent.search( beforeVersion ) ).toBeGreaterThan( 0 );
         style.updatePackageImport( { 'dir' : projectDir } );
 
-        var updatedLessContent = fs.readFileSync( htmlFile, 'UTF-8');
+        var updatedLessContent = fs.readFileSync( lessFile, 'UTF-8');
 
         expect( updatedLessContent.search( beforeVersion ) ).toBeLessThan( 0 );
         expect( updatedLessContent.search( updatedVersion ) ).toBeGreaterThan( 0 );

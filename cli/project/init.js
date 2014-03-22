@@ -23,10 +23,17 @@ cli.description = '初始化当前目录为项目目录';
  */
 cli.main = function () {
     var project = require( '../../index' );
-    var projectInfo = project.init( process.cwd() );
-    project.dir.init( projectInfo );
-    project.build.createConfigFile( projectInfo );
-    project.webserver.createConfigFile( projectInfo );
+
+    try {
+        var projectInfo = project.init( process.cwd() );
+        project.dir.init( projectInfo );
+        project.build.createConfigFile( projectInfo );
+        project.webserver.createConfigFile( projectInfo );
+    }
+    catch ( ex ) {
+        var edp = require( 'edp-core' );
+        edp.log.error( '[edp project init] ' + ex.message );
+    }
 };
 
 /**

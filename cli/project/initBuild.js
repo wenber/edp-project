@@ -35,6 +35,10 @@ cli.main = function () {
     if ( projectInfo ) {
         project.build.createConfigFile( projectInfo );
     }
+    else {
+        var edp = require( 'edp-core' );
+        edp.log.warn( '[edp project initBuild] You are not in project directory!' );
+    }
 };
 
 /**

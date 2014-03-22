@@ -35,6 +35,10 @@ cli.main = function () {
     if ( projectInfo ) {
         project.loader.updateAllFilesConfig( projectInfo );
     }
+    else {
+        var edp = require( 'edp-core' );
+        edp.log.warn( '[edp project updateLoaderConfig] You are not in project directory!' );
+    }
 };
 
 /**

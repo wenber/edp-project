@@ -1,0 +1,9 @@
+{
+    "esui": {
+        "3.1.0-alpha.6": {
+            "name": "esui",
+            "version": "3.1.0-alpha.6",
+            "main": "main"
+        }
+    }
+}

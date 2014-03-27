@@ -29,11 +29,13 @@ cli.usage = 'edp project updateLoaderConfig';
  * 模块命令行运行入口
  */
 cli.main = function () {
-    var project = require( '../index' );
+    var project = require( '../../index' );
     var projectInfo = project.getInfo( process.cwd() );
 
     if ( projectInfo ) {
+        project.module.updateConfig( projectInfo );
         project.loader.updateAllFilesConfig( projectInfo );
+        project.style.updatePackageImport( projectInfo );
     }
     else {
         var edp = require( 'edp-core' );

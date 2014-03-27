@@ -29,19 +29,18 @@ describe("module", function(){
         var projectInfo = GetInfo( Project );
         Module.updateConfig( projectInfo );
         expect( fs.writeFileSync.callCount ).toEqual( 1 );
-        expect( fileContent ).not.toBe( null );
 
         var config = JSON.parse( fileContent );
         expect( config ).not.toBe( null );
         expect( config.baseUrl ).toBe( 'src' );
-        expect( config.paths.hello ).toBe( 'src/bar/hello' );
+        expect( config.paths.hello ).toBe( 'bar/hello' );
         expect( config.packages.length ).toBe( 13 );
         expect( config.packages[0].name ).toBe( 'ef' );
         expect( config.packages[1].name ).toBe( 'er' );
         expect( config.packages[2].name ).toBe( 'mini-event' );
 
         expect( config.packages[3].name ).toBe( 'etpl' );
-        expect( config.packages[3].location ).toBe( 'dep/etpl/2.0.8/dist' );
+        expect( config.packages[3].location ).toBe( '../dep/etpl/2.0.8/dist' );
         expect( config.packages[3].main ).toBe( 'main' );
 
         expect( config.packages[4].name ).toBe( 'esui' );

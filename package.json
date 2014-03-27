@@ -9,9 +9,9 @@
     ],
 
     "dependencies": {
-        "edp-core": "~0.0.1",
-        "edp-config": "~0.4",
-        "edp-package": "~0.4",
+        "edp-core": "~1.0.7",
+        "edp-config": "~1.0.2",
+        "edp-package": "~0.4.11",
         "esprima": "~1.0.2",
         "escodegen": "~1.2.0",
         "mkdirp": "~0.3.3",

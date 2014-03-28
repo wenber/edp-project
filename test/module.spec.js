@@ -1,17 +1,17 @@
 /***************************************************************************
- * 
+ *
  * Copyright (c) 2014 Baidu.com, Inc. All Rights Reserved
- * $Id$ 
- * 
+ * $Id$
+ *
  **************************************************************************/
- 
- 
- 
+
+
+
 /**
  * module.spec.js ~ 2014/02/22 14:24:10
  * @author leeight(liyubei@baidu.com)
- * @version $Revision$ 
- * @description 
+ * @version $Revision$
+ * @description
  * lib/module.js的测试用例
  **/
 var path = require( 'path' );
@@ -19,14 +19,14 @@ var fs = require( 'fs' );
 
 var Project = path.resolve(__dirname, 'data', 'dummy-project');
 var Module = require( '../lib/module' );
-var GetInfo = require( '../lib/get-info' );
+var getInfo = require( '../lib/get-info' );
 
-describe("module", function(){
-    it("default", function(){
+describe('module', function(){
+    it('default', function(){
         var fileContent = null;
         spyOn( fs, 'writeFileSync' ).andCallFake( function( file, content ){ fileContent = content; } );
 
-        var projectInfo = GetInfo( Project );
+        var projectInfo = getInfo( Project );
         Module.updateConfig( projectInfo );
         expect( fs.writeFileSync.callCount ).toEqual( 1 );
 

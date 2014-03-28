@@ -2,18 +2,18 @@
  * style.spec.js ~2014/03/12
  * @author moonreplace(daihuiming@baidu.com)
  * @description
- * UT for lib/style.js 
+ * UT for lib/style.js
  **/
 
 var path = require( 'path' );
 var fs = require( 'fs' );
 
 var projectDir = path.resolve( __dirname, 'data', 'style' );
-var packages = require( 'edp-package' ).getImported( projectDir ); 
+var packages = require( 'edp-package' ).getImported( projectDir );
 var style = require( '../lib/style.js' );
 
 describe( 'sytle', function () {
-    
+
     var beforeVersion = '0.0.1';
     var updatedVersion = Object.keys( packages[ 'esui' ] ) [0];
     var htmlFile = path.resolve( projectDir, 'style.html' );
@@ -21,7 +21,6 @@ describe( 'sytle', function () {
 
     var beforeHtmlContent;
     var beforeLessContent;
-    var updatedLessContent;
 
     beforeEach( function () {
         beforeHtmlContent = fs.readFileSync( htmlFile, 'UTF-8' );
@@ -36,7 +35,7 @@ describe( 'sytle', function () {
         var updatedHtmlContent = fs.readFileSync( htmlFile, 'UTF-8');
 
         expect( updatedHtmlContent.search( beforeVersion ) ).toBeLessThan( 0 );
-        expect( updatedHtmlContent.match( RegExp( updatedVersion, 'g' ) ).length ).toEqual( 4 );
+        expect( updatedHtmlContent.match( new RegExp( updatedVersion, 'g' ) ).length ).toEqual( 4 );
     } );
 
     it( 'update less', function () {
@@ -51,7 +50,7 @@ describe( 'sytle', function () {
     } );
 
     afterEach( function() {
-        fs.writeFileSync( htmlFile, beforeHtmlContent, 'UTF-8' );   
-        fs.writeFileSync( lessFile, beforeLessContent, 'UTF-8' );   
+        fs.writeFileSync( htmlFile, beforeHtmlContent, 'UTF-8' );
+        fs.writeFileSync( lessFile, beforeLessContent, 'UTF-8' );
     } );
 } );

@@ -1,31 +1,31 @@
 /***************************************************************************
- * 
+ *
  * Copyright (c) 2014 Baidu.com, Inc. All Rights Reserved
- * $Id$ 
- * 
+ * $Id$
+ *
  **************************************************************************/
- 
- 
- 
+
+
+
 /**
  * read-loader-config.spec.js ~ 2014/02/22 14:01:07
  * @author leeight(liyubei@baidu.com)
- * @version $Revision$ 
- * @description 
- *  
+ * @version $Revision$
+ * @description
+ *
  **/
 var path = require( 'path' );
 var fs = require( 'fs' );
 
 var Project = path.resolve(__dirname, 'data', 'dummy-project');
-var ReadLoaderConfig = require( '../lib/util/read-loader-config' );
+var readLoaderConfig = require( '../lib/util/read-loader-config' );
 
-describe("read-loader-config", function(){
-    it("default", function(){
+describe('read-loader-config', function(){
+    it('default', function(){
         var file = path.resolve( Project, 'index.html' );
         var content = fs.readFileSync( file, 'utf-8' );
 
-        var config = ReadLoaderConfig( content, file );
+        var config = readLoaderConfig( content, file );
         expect( config ).not.toBe( undefined );
         expect( config.content ).toBe( content );
         expect( config.data ).not.toBe( undefined );
@@ -37,19 +37,19 @@ describe("read-loader-config", function(){
         expect( config.data.packages.length ).toBeGreaterThan( 0 );
     });
 
-    it("comment in html", function () {
+    it('comment in html', function () {
         var file = path.resolve( Project, 'read-config-loader/comment.html' );
         var content = fs.readFileSync( file, 'UTF-8' );
 
-        var config = ReadLoaderConfig( content, file );
+        var config = readLoaderConfig( content, file );
         expect( config ).toBeUndefined();
     });
 
-    it("comment in js", function () {
-        var file = path.resolve( Project, 'read-config-loader/comment.js' );        
+    it('comment in js', function () {
+        var file = path.resolve( Project, 'read-config-loader/comment.js' );
         var content = fs.readFileSync( file, 'UTF-8' );
 
-        var config = ReadLoaderConfig( content, file );
+        var config = readLoaderConfig( content, file );
         expect( config ).toBeUndefined();
     });
 

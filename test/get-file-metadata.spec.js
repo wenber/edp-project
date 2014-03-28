@@ -1,29 +1,29 @@
 /***************************************************************************
- * 
+ *
  * Copyright (c) 2014 Baidu.com, Inc. All Rights Reserved
- * $Id$ 
- * 
+ * $Id$
+ *
  **************************************************************************/
- 
- 
- 
+
+
+
 /**
  * get-file-metadata.spec.js ~ 2014/02/22 10:49:56
  * @author leeight(liyubei@baidu.com)
- * @version $Revision$ 
- * @description 
+ * @version $Revision$
+ * @description
  * 测试lib/util/get-file-metadata.js
  **/
 var path = require( 'path' );
-var fs = require( 'fs' );
+// var fs = require( 'fs' );
 
 var Project = path.resolve(__dirname, 'data', 'get-file-meta');
-var GetFileMeta = require( '../lib/util/get-file-metadata' );
+var getFileMeta = require( '../lib/util/get-file-metadata' );
 
 describe('get-file-metadata', function() {
     it('html comment', function(){
         var file = path.resolve( Project, '1.html' );
-        var config = GetFileMeta( file );
+        var config = getFileMeta( file );
         expect( config ).not.toBe( null );
         expect( config.webpath ).toBe( 'hello' );
         expect( config.t ).toBe( true );
@@ -35,7 +35,7 @@ describe('get-file-metadata', function() {
 
     it('multiline commnet', function(){
         var file = path.resolve( Project, '1.js' );
-        var config = GetFileMeta( file );
+        var config = getFileMeta( file );
         expect( config ).not.toBe( null );
         expect( config.webpath ).toBe( 'hello2' );
         expect( config.t ).toBe( true );
@@ -46,7 +46,7 @@ describe('get-file-metadata', function() {
     });
     it('shell file comment', function(){
         var file = path.resolve( Project, '1.sh' );
-        var config = GetFileMeta( file );
+        var config = getFileMeta( file );
         expect( config ).not.toBe( null );
         expect( config.webpath ).toBe( 'hello2' );
         expect( config.t ).toBe( true );
@@ -57,7 +57,7 @@ describe('get-file-metadata', function() {
     });
     it('single line commnet', function(){
         var file = path.resolve( Project, '2.js' );
-        var config = GetFileMeta( file );
+        var config = getFileMeta( file );
         expect( config ).not.toBe( null );
         expect( config.webpath ).toBe( 'hello2' );
         expect( config.t ).toBe( true );

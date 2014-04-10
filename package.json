@@ -1,26 +1,24 @@
 {
     "name": "edp-project",
     "description": "Package for edp project manage",
-    "version": "0.4.31",
+    "version": "0.5.0",
     "contributors": [
         { "name": "errorrik", "email": "errorrik@gmail.com" },
         { "name": "leeight", "email" : "leeight@gmail.com" },
         { "name": "treelite", "email" : "c.xinle@gmail.com" }
     ],
-
     "dependencies": {
-        "edp-core": "~1.0.7",
+        "edp-core": "~1.0.12",
         "edp-config": "~1.0.2",
-        "edp-package": "~0.4.11",
-        "esprima": "~1.0.2",
-        "escodegen": "~1.2.0",
+        "edp-package": "~0.4.12",
+        "esprima": "~1.1.1",
+        "escodegen": "~1.3.1",
         "mkdirp": "~0.3.3",
         "semver": "~2.2.1"
     },
     "main": "index.js",
     "repository": "git://github.com/ecomfe/edp-project",
     "scripts": {
-        "test": "make -C test",
-        "prepare": "npm ln edp-core edp-config edp-package"
+        "test": "make -C test"
     }
 }

@@ -37,17 +37,19 @@ describe('module', function(){
         expect( config.packages.length ).toBe( 13 );
         expect( config.packages[0].name ).toBe( 'ef' );
         expect( config.packages[1].name ).toBe( 'er' );
-        expect( config.packages[2].name ).toBe( 'mini-event' );
+        expect( config.packages[2].name ).toBe( 'esf-ms' );
 
-        expect( config.packages[3].name ).toBe( 'etpl' );
-        expect( config.packages[3].location ).toBe( '../dep/etpl/2.0.8/dist' );
-        expect( config.packages[3].main ).toBe( 'main' );
+        expect( config.packages[3].name ).toBe( 'est' );
+        expect( config.packages[3].location ).toBe( '../dep/est/1.1.0/src' );
+        expect( config.packages[3].main ).toBe( undefined );
+
+        expect( config.packages[5].location ).toBe( '../dep/etpl/2.0.8/dist' );
 
         expect( config.packages[4].name ).toBe( 'esui' );
-        expect( config.packages[5].name ).toBe( 'underscore' );
-        expect( config.packages[6].name ).toBe( 'moment' );
-        expect( config.packages[7].name ).toBe( 'esf-ms' );
-        expect( config.packages[8].name ).toBe( 'est' );
+        expect( config.packages[5].name ).toBe( 'etpl' );
+        expect( config.packages[6].name ).toBe( 'mini-event' );
+        expect( config.packages[7].name ).toBe( 'moment' );
+        expect( config.packages[8].name ).toBe( 'underscore' );
         expect( config.packages[9].name ).toBe( 'urijs' );
 
         expect( config.packages[10].name ).toBe( 'remote' );

@@ -33,6 +33,7 @@ cli.main = function () {
     catch ( ex ) {
         var edp = require( 'edp-core' );
         edp.log.error( '[edp project init] ' + ex.message );
+        throw ex;
     }
 };
 
